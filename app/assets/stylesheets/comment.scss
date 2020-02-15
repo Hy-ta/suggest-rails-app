@@ -1,0 +1,38 @@
+
+.inbox_msg {
+    border: 1px solid #c4c4c4;
+    clear: both;
+    overflow: hidden;
+}
+
+.inbox_people {
+    background-color: #f8f8f8 none repeat scroll 0 0;
+    float: left;
+    overflow: hidden;
+    width: 40%; 
+    border-right: 1px solid #c4c4c4;
+}
+
+.comment_heading h4 {
+    font-size: 21px;
+    margin: auto;
+}
+
+.comment_people{
+    overflow: hidden;
+    clear: both;
+}
+.comment_list {
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0;
+    padding: 18px 16px 10px;
+
+} 
+
+.inbox_comment {
+    height: 550px;
+    overflow-y: scroll;
+}
+.comment{
+    background-color: #cec1c1;
+}

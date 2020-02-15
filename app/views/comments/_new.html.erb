@@ -1,0 +1,38 @@
+<div class="modal fade" id="modalCommentForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Comment</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+
+      <%= form_with(url: post_comments_path(@post), method: :post) do |f| %>
+        <div class="py-4">
+          <div class="modal-body mx-3">
+            <div class="md-form my-5 text-center">
+            <%= f.label :title %></ br>
+            <%= f.text_field :title %>
+            </div>
+
+            <div class="md-form mb-4 text-center">
+            <%= f.label Comment %></ br>
+            <%= f.text_field :content, class:"py-5" %></ br>
+            </div>
+          </div>
+
+          <div class="modal-footer d-flex justify-content-center">
+            <%= f.submit "Send", class:"btn btn-secondary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="text-center py-4">
+  <a href="" class="btn btn-secondary btn-rounded " data-toggle="modal" data-target="#modalCommentForm">
+    Comment</a>
+</div>

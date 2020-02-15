@@ -1,3 +1,15 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#mainLogo1 {
+    background-color: #cccccc;
+}
+#mainLogo2{
+    background-image: url('http://www.jobscareers.us/wp-content/uploads/2019/04/Blog_remote-job-listing.jpg');
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+.logo{
+    border-radius: 50%;
+}
+
+.desc {
+    letter-spacing: 1.0px;
+}

@@ -1,16 +1,25 @@
-<h2>Forgot your password?</h2>
+<% provide(:title, "Forgot your password?") %>
+<%= stylesheet_link_tag "application" %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="py-4">
+  <div class="container text-center">
+    <div class="card my-3">
+      <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Forgot your password?</strong>
+      </h5>
+    <div class="card-body px-lg-5 pt-0" style="color: #757575;"> 
+      <!--------------- Form ------------------>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %> 
+         <!-- Email -->
+         <div class="md-form mt-4">
+             <%= f.label :email %><br />
+             <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+         </div>
+        <div class="actions my-4">
+          <%= f.submit "Send me reset password instructions", class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+    <%= render "users/shared/links" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

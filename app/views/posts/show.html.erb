@@ -1,0 +1,46 @@
+<div class="py-4">
+  <div class="container">
+  <h2 class="text-center py-4 text-white"><span style="border-bottom: 1px solid #fff">Post</span></h2>
+    <div class="row justify-content-center">
+        <div class="card mt-3 col-9 col-md-9">
+
+          <h5 class="card-header text-center py-4"> 
+            <strong><%= @post.title %></strong>
+          </h5>
+          
+          <div class="card-body px-lg-5 pt-4 text-center">
+             <%= @post.content %>
+          </div>
+
+          <div class="card-body px-lg-5 pt-4 text-center">
+             <%= image_tag @post.img.url, size: 150 if @post.img? %>
+          </div>
+
+          <div class="card-body px-lg-5 pt-4 text-center">
+             <%= @post.created_at.strftime('%Y/%m/%d') %>
+          </div>
+          <% if user_signed_in? %> 
+          <div class="row px-lg-5 pt-4">
+            <div class="mx-auto">
+              <%= link_to "Edit", edit_post_path, class:"text-success" %>
+            </div>
+            <div class="mx-auto">
+             <%= link_to "Index Post page", posts_path(@post), class:"text-info" %>
+            </div>
+            <div class="mx-auto">
+              <%= link_to 'Delete', post_path(@post), :method => :delete, data: {confirm: "Are you sure?"}, class:"text-danger" %>
+            </div>
+          </div>
+          <% end %>
+          <div class="container">
+            <%= render 'comments/new' %>
+          </div>
+        </div>
+        <div class="py-4">
+          <div class="container">
+            <%= render 'comments/show' %>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

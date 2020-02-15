@@ -1,2 +1,58 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<%#= stylesheet_link_tag "pages", :media => "all" #%>
+
+<main>
+    <section id="mainLogo1">
+    <div class="py-4">
+    <div class="container">
+      <%= image_tag "main.png", class:"mb-3 img-fluid h-50 d-inline-block my-2", width: "200px" %>
+         <div class="row mt-4">
+            <h1 class="py-3 ml-3">What is Suggest ?</h1>
+            <h4 class="ml-3 desc">This application connects you to people whom give you as many suggest as they can</br>
+            So You don't have to spend so much time to think what to do when you think you want to do something.</br>
+                inspiration indicates new inspiration !</br> <strong>So Let's get started Today !!</strong></h2>
+               <%= link_to "Sign up", signup_path, class:"btn btn-primary mb-4 ml-3" %> 
+         </div>
+     </div>
+     </div>
+     </section>
+
+
+    <section id="mainLogo2">
+    <div class="py-4">
+    <div class="container">
+        <div class="media px-4">
+        <%= image_tag "ava.png", class: "mr-3 align-self-start logo", width:"80px" %>          
+            <div class="media-body">
+            <h5>Michel</h5>
+            <p>Big Thanks for Gimmy!! <br>He suggested us for ......</p>
+                <div class="media mt-3">
+                    <%= image_tag "ava2.png", class: "mr-3 align-self-start logo", width:"80px" %>          
+                    <div class="media-body mr-2">
+                        <h5>Jimmy</h5>
+                        <p>Why don't you do ....</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="container">
+        <div class="media pt-4">
+        <%= image_tag "ava4.png", class: "mr-3 align-self-start logo", width:"80px" %>          
+            <div class="media-body">
+            <h5>Michel</h5>
+            <p>Big Thanks for Gimmy!! <br>He suggested us for ......</p>
+    
+                <div class="media mt-3">
+                <%= image_tag "ava3.jpeg", class: "mr-3 align-self-start logo", width:"80px" %>          
+                    <div class="media-body mr-2">
+                        <h5>Jimmy</h5>
+                        <p>Why don't you do ....</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+</main>

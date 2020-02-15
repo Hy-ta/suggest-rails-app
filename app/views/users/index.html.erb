@@ -1,0 +1,23 @@
+<% provide(:title, "All users") %>
+
+<div class="py-4">
+ <div class="container">
+   <h2 class="text-center">Users all</h2>
+   <p><%= will_paginate %></p>
+   
+    <div class="row text-center">
+      <% @users.each do |user| %>
+      <div class="col-6">
+      <a href="/users/<%= user.id %>", class="text-secondary"><%= user.name %></a>
+      </div>
+      </br >
+      <div class="col-6">
+      <a href="/users/<%= user.id %>", class="text-secondary"><%= user.email %></a>
+      </div>
+      </br >
+      <% end %>
+    </div>
+    <p><%= will_paginate %></p>
+    </div>
+</div>
+<%= link_to "Post index", posts_path %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'comments/new'
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   devise_scope :user do
@@ -11,4 +12,10 @@ Rails.application.routes.draw do
   end
   
   root to: 'pages#index'
+
+  get 'pages/index'
+  resources :users
+    resources :posts do
+      resources :comments
+    end
 end

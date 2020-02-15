@@ -1,0 +1,66 @@
+
+<div class="jumbotron jumbotron-fluid text-info">
+<div class="container">
+ <div class="row">
+
+     <%= image_tag @user.img.url, alt:"logo", class:"h-25 d-inline-block", width: "120px" if @user.img? %>
+     <%#= gravator_for @user #%>
+     <h3 class="mt-4 col-6 text-center"><%= @user.name %></h3>
+     <p class="pt-4 col-6 float-right"><%= @user.char_id %></p>
+ </div>
+</div>
+</div>
+<!-- /main logo -->
+<% if user_signed_in? %>
+<div class="py-4">
+ <div class="container">
+  <div class="row justify-content-center">
+   <div class="mr-auto text-white">
+     <a class="btn btn-primary mx-2" role="button">
+       <span class="ml-2">Chat</span>
+     </a>
+   </div>
+   <div class="mx-2 text-white">
+     <a class="btn btn-info" role="button">
+       <span class="mx-2">Best suggest</span>
+     </a>
+   </div>
+   <div class="mx-2">
+      <%= link_to "Post New", new_post_path, class: "btn btn-warning text-white" %>
+   </div>
+   <div class="px-2">
+     <%= link_to "Profile Edit", edit_user_registration_path(@user), class: "btn btn-success" %>
+   </div>
+  </div>
+ </div>
+</div>
+<% end %>
+<!-- card -->
+<div class="py-4">
+ <div class="container">
+   <div class="row justify-content-center">
+      <% @user.posts.each do |post| %>
+       <div class="card mt-3 col-9 col-md-9">
+         <h5 class="card-header text-center py-4 bg-">
+         <a href="/posts/<%= post.id %>", class="text-dark">
+           <strong><%= post.title %></strong>
+         </h5>
+         </a>
+         <div class="card-body px-lg-5 pt-4 text-center">
+            <%= post.content %>
+         </div>
+         <div class="card-body px-lg-5 pt-4 text-center">
+         <%= image_tag post.img.url, size: 150 if post.img? %>
+         </div>
+         <div class="card-body px-lg-5 pt-4 text-center">
+            <%= post.created_at.strftime('%Y/%m/%d') %>
+         </div>
+       </div>
+     <% end %>
+   </div>
+ </div>
+</div>
+
+
+
+

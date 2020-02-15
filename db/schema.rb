@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_003215) do
     t.text "content"
     t.integer "user_id"
     t.integer "post_id"
+    t.string "user_img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"

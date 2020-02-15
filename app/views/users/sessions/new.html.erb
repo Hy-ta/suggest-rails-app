@@ -1,26 +1,71 @@
-<h2>Log in</h2>
+<% provide(:title, "Login") %>
+<%#= stylesheet_link_tag "socialBtns", :media => "all" #%>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="py-4 bg-info">
+  <div class="container text-center">
+    <div class="card mt-3">
+      <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Login</strong>
+      </h5>
+      <div class="card-body px-lg-5 pt-0" style="color: #757575;"> 
+      <!--------------- Form ------------------>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <!-- Email -->
+         <div class="md-form mt-4">
+             <%= f.label :email %><br />
+             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+         </div>
+      <!----------------- Password --------------- -->
+         <div class="md-form mt-2">
+           <%= f.label :password %><br />
+           <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+         </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+         <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <div class="actions">
+          <%= f.submit "Log In", class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+    <div class="py-4">
+    　　<%= link_to "Forgot your password?",  new_user_password_path, class:"float-right" %>
+        <p>Not a member? 
+          <%= link_to "Sign up now!", signup_path, class:"btn btn-outline-danger btn-rounded btn-block waves-effect z-depth-0" %>
+        </p>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+     <div class="py-2">
+       <div class="bg-dark container text-center" style="color: #757575;" id="page-content">
+          <div class="card bg-secondary">
+            <div class="nav justify-content-start">             
+              <div class="card-body">
+                <h4 class="card-title mb-3 text-white"> or sign up with:</h4>
+                 <div class="social-icon"> 
+                   <button type="button" class="btn btn-social-icon btn-facebook btn-rounded">
+                          <i class="fa fa-facebook"></i>
+                    </button> 
+                    <button type="button" class="btn btn-social-icon btn-twitter btn-rounded">
+                          <i class="fa fa-twitter"></i>
+                    </button>
+                    <button type="button" class="btn btn-social-icon btn-instagram btn-rounded">
+                          <i class="fa fa-instagram"></i>
+                    </button> 
+                 </div>
+              </div>
+            </div>
+           </div>             
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
 
-<%= render "users/shared/links" %>
+ 
+      
+  
+
+    

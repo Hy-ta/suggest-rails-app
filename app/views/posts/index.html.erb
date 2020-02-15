@@ -1,0 +1,38 @@
+<div class="py-4">
+  <div class="container">
+   <div class="row justify-content-center">
+    <div class="col-6 mx-auto">
+       <%= link_to "My page", current_user, class: "ml-2 btn btn-warning" %>
+    </div>
+   </div>
+  </div>
+</div>
+<!-- /section1 -->
+
+
+<!-- card -->
+<div class="py-4">
+  <div class="container">
+    <div class="row justify-content-center">
+       <% @posts.each do |post| %>
+        <div class="card mt-3 col-9 col-md-9">
+          <h5 class="card-header text-center py-4">
+          <a href="/posts/<%= post.id %>", class="text-dark">
+            <strong><%= post.title %></strong>
+          </h5>
+          </a>
+          <div class="card-body px-lg-5 pt-4 text-center">
+            <%= post.content %>
+          </div>
+          <div class="card-body px-lg-5 pt-4 text-center">
+            <%= image_tag post.img.url, size: 150 if post.img? %>
+          </div>
+          <div class="card-body px-lg-5 pt-4 text-center">
+             <%= post.created_at.strftime('%Y/%m/%d') %>
+          </div>
+        </div>
+       <% end %>
+    </div>
+  </div>
+</div>
+ 
