@@ -62,6 +62,7 @@ end
 group :production do
   # postgresql
   gem 'pg', :group => [:production]
+  gem 'rails_12factor'
   # Use Puma as the app server
   gem 'puma', '~> 3.11'
 end
