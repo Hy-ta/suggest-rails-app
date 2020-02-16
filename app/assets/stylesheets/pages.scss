@@ -1,15 +1,13 @@
 #mainLogo1 {
-    background-color: #cccccc;
-}
-#mainLogo2{
-    background-image: url('http://www.jobscareers.us/wp-content/uploads/2019/04/Blog_remote-job-listing.jpg');
+    background-image: url('././mainbg.jpeg');
     background-repeat: no-repeat, repeat;
     background-size: cover;
-}
-.logo{
-    border-radius: 50%;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .desc {
-    letter-spacing: 1.0px;
+    letter-spacing: 2px;
+    line-height: 2.5rem;
+
 }

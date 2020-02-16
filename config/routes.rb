@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'comments/new'
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   devise_scope :user do
@@ -14,7 +13,7 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   get 'pages/index'
-  get "users/gallery"
+  get 'users/gallery'
   resources :users
     resources :posts do
       resources :comments, only: [:create]
