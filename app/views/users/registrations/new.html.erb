@@ -1,4 +1,4 @@
-<%#= stylesheet_link_tag "socialBtns", :media => "all" #%>
+<%= stylesheet_link_tag "socialBtns", :media => "all" %>
 <div class="py-4 bg-info">
   <div class="container text-center">
     <div class="card mt-3">
@@ -10,17 +10,21 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <!-- name -->
-         <div class="md-form mt-4">
+         <div class="md-form py-4">
              <%= f.label :Name %><br />
              <%= f.text_field :name, class:'form-control', autofocus: true, autocomplete: "name" %>
          </div>
          <!-- Email -->
-         <div class="md-form mt-4">
+         <div class="md-form py-4">
              <%= f.label :email %><br />
              <%= f.email_field :email, class:'form-control', autofocus: true, autocomplete: "email" %>
          </div>
+         <div class="md-form py-4">
+            <%= f.label :Id %><br />
+            <%= f.email_field :char_id, class:'form-control', autofocus: true, autocomplete: "email" %>
+         </div>
       <!----------------- Password --------------- -->
-         <div class="md-form mt-2">
+         <div class="md-form py-4">
            <%= f.label :password %><br />
            <% if @minimum_password_length %>
            <em>(<%= @minimum_password_length  %> characters minimum)</em>
@@ -28,14 +32,14 @@
            <%= f.password_field :password, autocomplete: "new-password", class:'form-control'%>
          </div>
       <!----------------- Password confirmation --------------- -->
-         <div class="md-form mt-2">
+         <div class="md-form py-4">
            <%= f.label :password_confirmation %><br />
            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
          </div>
          <!---------  reason   ---------->
-         <div class="mt-3 form-group row">
+         <div class="py-4 form-group row">
              <legend class="col-form-label col-md-6">
-                  <span class="text-warning"> How did you find us ?</span>
+                  <p class="text-warning"> How did you find us ?</p>
              </legend>
                <div class="col-md-6">
                    <div class="form-check form-check-inline">
@@ -54,12 +58,12 @@
           </div>
 
           <div class="actions py-3">
-            <%= f.submit "Sign up", class: "btn btn-primary" %>
+            <%= f.submit "Sign up", class: "btn btn-primary alert alert-primary w-100" %>
           </div>
          
         <% end %>
 
-     <div class="py-2">
+     <div class="py-4">
        <div class="bg-dark container text-center" style="color: #757575;" id="page-content">
          <div class="card bg-secondary">
            <div class="nav justify-content-start">             

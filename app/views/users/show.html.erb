@@ -1,38 +1,35 @@
 <% provide(:title, @user.name) %>
 <%= stylesheet_link_tag 'users', media: 'all' %>
 
-<div class="jumbotron jumbotron-fluid text-info">
+<div class="jumbotron jumbotron-fluid text-white">
 <div class="container">
  <div class="row">
-
-     <%= image_tag @user.img.url, alt:"logo", class:"h-25 d-inline-block", width: "120px" if @user.img? %>
-     <h3 class="mt-4 col-6 text-center"><%= @user.name %></h3>
-     <p class="pt-4 col-6 float-right"><%= @user.char_id %></p>
+     <h2 class="mt-4 col-6 text-center display-3 col-12 col-md-6"><%= @user.name %></h3>
+     <%= image_tag @user.img.url, alt:"logo", class:"py-2 text-center col-12 col-md-6 img" if @user.img? %>
+     <h4 class="pt-4 col-12 col-md-12 text-center"><%= @user.char_id %></h4>
  </div>
 </div>
 </div>
 <!-- /main logo -->
 <% if user_signed_in? %>
-<div class="py-4">
- <div class="container">
-  <div class="row justify-content-center">
-   <div class="mr-auto text-white">
-     <a class="btn btn-primary mx-2" role="button">
-       <span class="ml-2">Chat</span>
-     </a>
-   </div>
-   <div class="mx-2 text-white">
-     <%= link_to "Gallery", users_gallery_path, class:"btn btn-info mx-2" %>
-   </div>
-   <div class="mx-2">
-      <%= link_to "Post New", new_post_path, class: "btn btn-warning text-white" %>
-   </div>
-   <div class="px-2">
-     <%= link_to "Profile Edit", edit_user_registration_path(@user), class: "btn btn-success" %>
-   </div>
+  <div class="py-4">
+  <div class="container">
+      <div class="row justify-content-center">
+        <div class="my-2 text-white col-3 col-md-6">
+          <%= link_to "Chat", users_gallery_path, class:"btn btn-primary w-100" %>
+        </div>
+        <div class="my-2 text-white col-3 col-md-6">
+          <%= link_to "Gallery", users_gallery_path, class:"btn btn-info w-100" %>
+        </div>
+        <div class="my-2 col-md-6 col-3">
+            <%= link_to "New Post", new_post_path, class: "btn btn-warning text-white w-100" %>
+        </div>
+        <div class="my-2 col-md-6 col-3">
+          <%= link_to "Edit", edit_user_registration_path(@user), class: "btn btn-success w-100" %>
+        </div>
+    </div>
   </div>
- </div>
-</div>
+  </div>
 <% end %>
 <!-- card -->
 <div class="py-4">

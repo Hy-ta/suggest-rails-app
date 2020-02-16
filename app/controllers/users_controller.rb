@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :img, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :img, :email, :password, :password_confirmation, :char_id)
   end
 
   def after_sign_up_path_for(resource)
