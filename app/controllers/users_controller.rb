@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :destroy, :create, :new]
 
   def index
+    @users = User.order("id DESC")
     @users = User.paginate(page: params[:page])
     @user = User.new
   end
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def library
+  def gallery
   end
 
   private

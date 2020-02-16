@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # mount_uploader :img, ImgUploader
+  mount_uploader :img, ImgUploader
   has_many :posts, dependent: :destroy
   has_many :comments
   # Include default devise modules. Others available are:

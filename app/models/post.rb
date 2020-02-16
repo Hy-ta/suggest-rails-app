@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
     mount_uploader :img, ImgUploader
     belongs_to :user
-    has_many :comments
+    has_many :comments, dependent: :destroy
 
     default_scope ->  { order(created_at: :desc) }
 

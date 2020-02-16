@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   get 'pages/index'
+  get "users/gallery"
   resources :users
     resources :posts do
-      resources :comments
+      resources :comments, only: [:create]
     end
+
 end

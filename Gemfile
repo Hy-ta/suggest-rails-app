@@ -75,7 +75,6 @@ gem 'devise'
 gem 'carrierwave', '~> 2.0'
  # Bootstrap4 and jQuery
  gem 'bootstrap', '~> 4.3.1'
- gem 'bootstrap-sass'
  gem 'jquery-rails'
  # FontAwesome
 gem "font-awesome-rails"

@@ -1,31 +1,35 @@
+<%= stylesheet_link_tag 'postNew', media: 'all' %>
+
 <div class="py-4">
 <div class="container">
   <div class="row justify-content-center">
     <%= form_for(@post) do |f| %>
       <% if @post.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
           <ul>
-          <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
           </ul>
         </div>
       <% end %>
-      <div class="card mt-3 col-9 col-md-9 ">
+      
+      <div class="card mt-3 col-md-10">
         <h5 class="card-header text-center py-4">
-          <strong><%= f.label :title %></strong>
-          <%= f.text_field :title %>
+          <%= f.label :title, class:"display-4 text-danger" %></br>
+          <%= f.text_field :title, class:"py-4" %>
         </h5>
-        <div class="card-body px-lg-5 py-4 text-center justify-content-center">
-          <%= f.text_area :content, class:"my-4 py-4" %>
+        <div class="card-body px-lg-5 py-4 text-center">
+          <%= f.label :content, class:"display-4 text-danger" %></br>
+          <%= f.text_field :content, class:"w-100 py-4" %>
         </div>
         <div class="card-body px-lg-5 pt-4 text-center">
-          <%= f.label :img %>
-          <%= f.file_field :img %>
+          <%= f.label :img, class:"display-4 text-warning mb-4"%></br>
+          <%= f.file_field :img, class:"ml-4" %>
         </div>
-        <div class="my-2 text-center">
-          <%= f.submit "Send", class: "btn btn-primary" %>
+        <div class="py-4 text-center">
+          <%= f.submit "Send", class: "btn btn-primary w-100" %>
         </div>
       </div>
     <% end %>

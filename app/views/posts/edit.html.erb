@@ -1,0 +1,36 @@
+<% provide(:title, "Edit Post") %>
+<div class="py-4">
+<h1 class="ml-3">Edit your post</h1>
+<div class="container">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@post) do |f| %>
+      <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+    
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control mt-2' %>
+
+      <%= f.label :content %>
+      <%= f.text_field :content, class: 'form-control mt-2' %>
+
+      <%= f.label :img %>
+      <%= f.file_field :img %>
+      
+      <%= f.submit "Save changes", class: "btn btn-primary mt-4" %>
+    
+      <% end %>
+      </div>
+  </div>
+</div>
+</div>

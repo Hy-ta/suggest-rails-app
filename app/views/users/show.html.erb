@@ -1,10 +1,11 @@
+<% provide(:title, @user.name) %>
+<%= stylesheet_link_tag 'users', media: 'all' %>
 
 <div class="jumbotron jumbotron-fluid text-info">
 <div class="container">
  <div class="row">
 
      <%= image_tag @user.img.url, alt:"logo", class:"h-25 d-inline-block", width: "120px" if @user.img? %>
-     <%#= gravator_for @user #%>
      <h3 class="mt-4 col-6 text-center"><%= @user.name %></h3>
      <p class="pt-4 col-6 float-right"><%= @user.char_id %></p>
  </div>
@@ -21,9 +22,7 @@
      </a>
    </div>
    <div class="mx-2 text-white">
-     <a class="btn btn-info" role="button">
-       <span class="mx-2">Best suggest</span>
-     </a>
+     <%= link_to "Gallery", users_gallery_path, class:"btn btn-info mx-2" %>
    </div>
    <div class="mx-2">
       <%= link_to "Post New", new_post_path, class: "btn btn-warning text-white" %>
