@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
    devise_for :users, controllers: {
-      sessions: 'users/sessions' 
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
     }
 
   devise_scope :user do
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   get 'users/gallery'
   resources :users
     resources :posts do
-      resources :comments, only: [:create]
+      resources :comments, only: [:create, :delete]
     end
 
 end

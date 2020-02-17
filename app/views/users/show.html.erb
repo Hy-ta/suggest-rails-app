@@ -1,10 +1,11 @@
 <% provide(:title, @user.name) %>
 <%= stylesheet_link_tag 'users', media: 'all' %>
+<%= stylesheet_link_tag 'card', media: 'all' %>
 
 <div class="jumbotron jumbotron-fluid text-white">
 <div class="container">
  <div class="row justify-content-center">
- <%= image_tag @user.img.url,class:"col-sm-12 col-md-3 my-4 img", size: 150 if @user.img? %>
+ <%= image_tag @user.img.url,class:"col-sm-12 col-md-6 col-lg-3 my-4 img", size: 150 if @user.img? %>
      <h2 class="mt-4 col-6 text-center display-3 col-12 col-md-6"><%= @user.name %></h3>
     
      <h4 class="pt-4 col-12 col-md-12 text-center"><%= @user.char_id %></h4>
@@ -37,7 +38,7 @@
  <div class="container">
    <div class="row justify-content-center">
       <% @user.posts.each do |post| %>
-       <div class="card mt-3 col-9 col-md-9">
+       <div class="card mt-3 col-9 col-md-9 cardSz">
          <h5 class="card-header text-center py-4 bg-">
          <a href="/posts/<%= post.id %>", class="text-dark">
            <strong><%= post.title %></strong>

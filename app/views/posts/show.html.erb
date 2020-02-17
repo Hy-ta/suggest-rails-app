@@ -1,29 +1,26 @@
 <%= stylesheet_link_tag "postShow" %>
+<%= stylesheet_link_tag 'card', media: 'all' %>
+
 <div class="py-4" id="postShow">
   <div class="container">
-  <h2 class="text-center py-4 text-white"><span style="border-bottom: 1px solid #fff">Post</span></h2>
-    <div class="row justify-content-center">
-        <div class="card mt-3 col-9 col-md-9">
-
-          <h5 class="card-header text-center py-4"> 
+     <div class="row justify-content-center">
+        <div class="card mt-3 col-9 col-md-9 cardSz">
+          <h3 class="card-header text-center py-4"> 
             <strong><%= @post.title %></strong>
-          </h5>
-          
+          </h3>    
           <div class="card-body px-lg-5 pt-4 text-center">
              <%= @post.content %>
           </div>
-
           <div class="card-body px-lg-5 pt-4 text-center">
              <%= image_tag @post.img.url, size: 150 if @post.img? %>
           </div>
-
           <div class="card-body px-lg-5 pt-4 text-center">
              <%= @post.created_at.strftime('%Y/%m/%d') %>
           </div>
           <% if user_signed_in? %> 
           <div class="row px-lg-5 pt-4">
             <div class="mx-auto">
-              <%= link_to "Edit", edit_post_path, class:"text-success" %>
+              <%= link_to "Edit", edit_post_path(@post), class:"text-success" %>
             </div>
             <div class="mx-auto">
              <%= link_to "All suggest", posts_path(@post), class:"text-info" %>
@@ -32,8 +29,8 @@
               <%= link_to 'Delete', post_path(@post), :method => :delete, data: {confirm: "Are you sure?"}, class:"text-danger" %>
             </div>
           </div>
-          <% end %>
-          </div>
+        <% end %>
+      </div>
           <div class="container">
             <%= render 'comments/new' %>
           </div>

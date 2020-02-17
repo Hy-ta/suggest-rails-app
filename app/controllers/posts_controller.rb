@@ -19,6 +19,7 @@ class PostsController < ApplicationController
       flash[:success] = "Your post was sent !"
       redirect_to post_path(@post)
     else
+      flash.now[:alert] = "Post wasn't sent."
       render :new
     end
   end
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
     if @post.user != current_user
       redirect_to post_path(@post)
     end
+
   end
  
   def update
