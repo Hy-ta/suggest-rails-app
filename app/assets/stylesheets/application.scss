@@ -10,6 +10,17 @@ html, body{
     flex-direction: column;
     min-height: 100vh;
   }
+
+  .flash{
+    color: white;
+    text-align: center;
+    .alert{
+    background-color: red;
+    }
+    .notice {
+        background-color: blue;
+    }
+   }
   
   footer {
     background-color: rgba(0,0,0,0.9);

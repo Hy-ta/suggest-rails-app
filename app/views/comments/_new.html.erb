@@ -10,16 +10,26 @@
       </div>
 
       <%= form_with(url: post_comments_path(@post), method: :post) do |f| %>
+        <% if @comment.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being sent:</h2>
+          <ul>
+            <% @comment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
         <div class="py-4">
           <div class="modal-body mx-3">
-            <div class="md-form my-5 text-center">
-            <%= f.label :title %></ br>
+            <div class="my-5">
+            <%= f.label :title, class:"mr-2" %></br>
             <%= f.text_field :title %>
             </div>
 
-            <div class="md-form mb-4 text-center">
-            <%= f.label Comment %></ br>
-            <%= f.text_field :content, class:"py-5" %></ br>
+            <div class="mb-4">
+            <%= f.label "Comment", class:"mr-2" %></br>
+            <%= f.text_area :content, class:"py-5 w-100" %>
             </div>
           </div>
 

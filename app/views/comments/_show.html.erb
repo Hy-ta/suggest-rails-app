@@ -1,24 +1,13 @@
 <%= stylesheet_link_tag "comments" %>
+
 <div class="py-4">
-<h2 class="text-center py-4"><span style="border-bottom: 1px solid #fff">Comment</span></h2>
-  <div class="container">
-    <% @comments.each do |comment| %>
-    <div class="inbox_msg">
-        <div class="comment_heading">
-          <h2 class="text-center text-info"><%= comment.title %></h2>
-        </div>
-        <div class="inbox_comment">
-          <div class="comment_list comment">
-            <div class="comment_people">
-              <div class="comment_img float-left"><%#= image_tag @comment.user_img if user.img? #%></div>
-                <div class="comment_ib text-center px-4">  
-                  <p class="mt-4 text-info"><%= comment.content %></p>
-                  <p class="mt-2"><span class="comment_date"><%= comment.created_at.strftime('%Y/%m/%d') %></span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-       </div>
+  <h2 class="text-center py-4 text-white"><span style="border-bottom: 1px solid #fff">Comment</span></h2>
+    <div class="container">
+      <% @comments.each do |c| %>
+          <%= c.title %>
+          <%#= image_tag @comment.user_img if user.img? #%>                 
+          <%= c.content %>
+          <%= c.created_at.strftime('%Y/%m/%d') %>      
+      <% end %>
     </div>
-  <% end %>
 </div>

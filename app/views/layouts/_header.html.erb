@@ -5,9 +5,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-              <div class="collapse navbar-collapse" id="navbar-content">
+              <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
                 <!-- nav menu -->
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav justify-content-end">
                     <% if user_signed_in? %>  
                     <li class="nav-item">
                       <%= link_to "My page", current_user, class:"nav-link text-white " %>

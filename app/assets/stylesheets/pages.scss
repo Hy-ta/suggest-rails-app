@@ -1,10 +1,21 @@
 #mainLogo1 {
-    background-image: url('././mainbg.jpeg');
+    background-image: url('././mainBg.jpeg');
     background-repeat: no-repeat, repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
+
+
+
+#mainLogo2 {
+    background-image: url('././mainBg2.jpeg');
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
 
 .desc {
     letter-spacing: 2px;
