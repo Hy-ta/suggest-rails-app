@@ -15,7 +15,6 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.post_id = @post.id
     if @comment.save
-      flash[:success] = "Your comment was sent !"
       redirect_to post_path(@post)
     else
       render template: 'posts/show'

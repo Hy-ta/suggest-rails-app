@@ -1,0 +1,19 @@
+$deny_alert_bg_color: #f2dede;
+$deny_alert_border_color: #eed3d7;
+$deny_alert_color: #b94a48;
+$pass_alert_bg_color: #dff0d8;
+$pass_alert_border_color: #d6e9c6;
+$pass_alert_color: #468847;
+
+.alert-alert{
+    background-color: $deny_alert_bg_color;
+    border-color: $deny_alert_border_color;
+    color: $deny_alert_color;
+    text-align: left;
+  }
+  .alert-notice {
+    background-color: $pass_alert_bg_color;
+    border-color: $pass_alert_border_color;
+    color: $pass_alert_color;
+    text-align: left;
+  }

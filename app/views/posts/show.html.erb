@@ -3,6 +3,9 @@
 
 <div class="py-4" id="postShow">
   <div class="container">
+    <% flash.each do |message_type, message| %>
+     <%= content_tag(:div, message, class:"alert alert-#{message_type}")%>
+    <% end %>
      <div class="row justify-content-center">
         <div class="card mt-3 col-9 col-md-9 cardSz">
           <h3 class="card-header text-center py-4"> 

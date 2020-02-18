@@ -16,10 +16,8 @@ class PostsController < ApplicationController
   @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      flash[:success] = "Your post was sent !"
       redirect_to post_path(@post)
     else
-      flash.now[:alert] = "Post wasn't sent."
       render :new
     end
   end
