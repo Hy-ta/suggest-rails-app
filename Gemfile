@@ -82,4 +82,6 @@ gem 'will_paginate', '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'faker'
 # facebook signup
+gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'dotenv-rails'

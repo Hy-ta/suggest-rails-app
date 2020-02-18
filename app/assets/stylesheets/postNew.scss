@@ -1,5 +1,5 @@
 body{
-    background-image: url('././postBg.jpeg');
+    background-image: url('././newPost.jpeg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -7,6 +7,11 @@ body{
 .newPost{
     background-image: url('././newPost.jpeg');
     background-repeat: no-repeat;
-    // background-attachment: fixed;
+    background-attachment: fixed;
     background-size: cover;
+}
+
+.form{
+    width: 100%;
+    height: 250px;
 }

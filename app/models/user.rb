@@ -11,4 +11,18 @@ class User < ApplicationRecord
          validates :char_id, length: { maximum: 12 }
          validates :email,   presence: true
          validates :password, presence: true, length: {maximum: 12}
+
+         def self.find_oauth(auth)
+           user = User.where(uid: auth.uid, provider: auth.provider).first
+           
+           unless user
+            user = User.create(
+              uid:      auth.uid,
+              provider: auth.provider,
+              email:    auth.info.email,
+              password: Devise.friendly_token[0, 20]
+            )
+         end
+         user
+        end
 end

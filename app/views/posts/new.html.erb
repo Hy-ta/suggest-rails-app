@@ -15,14 +15,14 @@
         </div>
       <% end %>
       
-      <div class="card mt-3 col-md-10 newPost">
+      <div class="card mt-3 col-md-10 newPost font-italic">
         <h5 class="card-header text-center py-4">
-          <%= f.label :title, class:"display-4 text-danger" %></br>
+          <%= f.label :title, class:"display-4 text-info" %></br>
           <%= f.text_field :title, class:"py-4" %>
         </h5>
         <div class="card-body px-lg-5 py-4 text-center">
           <%= f.label :content, class:"display-4 text-danger" %></br>
-          <%= f.text_field :content, class:"w-100 py-4" %>
+          <%= f.text_area :content, class:"form py-4" %>
         </div>
         <div class="card-body px-lg-5 pt-4 text-center">
           <%= f.label :img, class:"display-4 text-warning mb-4"%></br>
