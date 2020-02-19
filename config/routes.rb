@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'users/gallery'
   resources :users
     resources :posts do
-      resources :comments, only: [:create, :delete, :new]
+      resources :comments, only: [:create, :delete, :new, :show]
     end
 
 end

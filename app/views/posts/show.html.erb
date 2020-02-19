@@ -3,9 +3,9 @@
 
 <div class="py-4" id="postShow">
   <div class="container">
-    <% flash.each do |message_type, message| %>
-     <%= content_tag(:div, message, class:"alert alert-#{message_type}")%>
-    <% end %>
+      <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class:"alert alert-#{message_type}")%>
+      <% end %>
      <div class="row justify-content-center">
         <div class="card mt-3 col-9 col-md-9 cardSz">
           <h3 class="card-header text-center py-4"> 
@@ -32,17 +32,13 @@
               <%= link_to 'Delete', post_path(@post), :method => :delete, data: {confirm: "Are you sure?"}, class:"text-danger" %>
             </div>
           </div>
-        <% end %>
-      </div>
-          <div class="container">
-            <%= link_to "Comment", new_post_comment_path(@post) %>
-          </div>
-        
-        <div class="py-4">
-          <div class="container">
-            <%= render 'comments/show' %>
-          </div>
+          <% end %>
         </div>
-    </div>
+      </div>
+      <div class="py-4 text-center">
+          <div class="container">
+            <%= link_to "Comment", new_post_comment_path(@post), class:"btn btn-warning alert alert-warning " %>
+          </div>
+      </div>
   </div>
 </div>

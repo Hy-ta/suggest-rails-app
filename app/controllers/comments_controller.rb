@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     # @post = Post.find(params[:post_id])
     # @comments = @post.comments
     if @comment.save
-      redirect_to post_path(@post)
+      redirect_to post_comment_path(@post, @comment)
     else
       render template: 'posts/show'
     end
