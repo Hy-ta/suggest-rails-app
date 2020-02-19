@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def index
-    @comments = Comment.order("id DESC")
+    @comments = Comment.all
   end
 
   def new
@@ -12,9 +12,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    # @comment = current_user.comments.new(comment_params)
     @comment.user_id = current_user.id
     @comment.post_id = @post.id
-    # @post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
     # @comments = @post.comments
     if @comment.save
       redirect_to post_comment_path(@post, @comment)

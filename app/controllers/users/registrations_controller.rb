@@ -1,8 +1,18 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  # prepend_before_action :require_no_authentication, only: [:cancel]
+  # prepend_before_action :authenticate_scope!, only: [:update, :destroy]
+  # before_action creatable?, only: [:new, :create]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+
+  # def creatable?
+  #   raise CanCan::AccessDenied unless user_signed_in?
+  #   if !current_user_is_admin?
+  #     raise CanCan::AccessDenied
+  #   end
+  # end
 
   # GET /resource/sign_up
   # def new
@@ -16,7 +26,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   # def edit
-  #   super
+  #   if by_admin_user?(params)
+  #     self.resources = resource_class.to_adapter.get!(params[:id])
+  #   else
+  #     autheticate_scope!
+  #     super
+  #   end
   # end
 
   # PUT /resource
@@ -58,5 +73,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   user_path(resource)
+  # end
+
+  # def current_user_is_admin?
+  #   user_signed_in? && current_user.has_role?(:admin)
+  # end
+
+  # def sign_up(resource_name, resource)
+  #   if !current_user_is_admin?
+  #     sign_in(resource_name, resource)
+  #   end
   # end
 end

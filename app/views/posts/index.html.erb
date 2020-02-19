@@ -1,12 +1,19 @@
 <%= stylesheet_link_tag "posts", :media => "all" %>
 <%= stylesheet_link_tag 'card', media: 'all' %>
 <% provide(:title, "Post") %>
+
 <div class="py-4">
   <div class="container">
    <div class="row justify-content-center">
+   <% if user_signed_in? %>
     <div class="col-6 mx-auto">
-       <%= link_to "My page", current_user, class: "ml-2 btn btn-warning" %>
+       <%= link_to "My page", current_user, class: "ml-2 btn btn-warning alert alert-warning w-100" %>
     </div>
+    <% else %>
+    <div class="col-6 mx-auto">
+       <%= link_to "Sign up !", new_user_registration_path , class: "ml-2 btn btn-primary alert alert-primary w-100" %>
+    </div>
+    <% end %>
    </div>
   </div>
 </div>

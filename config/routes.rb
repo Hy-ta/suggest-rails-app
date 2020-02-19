@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
    devise_for :users, controllers: {
       sessions: 'users/sessions',
       registrations: 'users/registrations',
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
     get "signup", :to => "users/registrations#new"
     get "sign_in", :to => "devise/sessions#new"
     get "login", :to => "users/sessions#new"
+    # get 'users/:id/edit' => 'users/registrations#edit', as: :edit_other_user_registration
+    # match 'users/:id', to: 'users/registrations#update', via: [:patch, :put], as: :edit_other_user_registration
   end
   
   root to: 'pages#index'
@@ -19,6 +22,7 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'users/gallery'
   resources :users
+  # resources :csv_import, only: :index
     resources :posts do
       resources :comments, only: [:create, :delete, :new, :show]
     end

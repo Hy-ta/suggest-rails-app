@@ -85,3 +85,6 @@ gem 'faker'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+# admin
+gem 'cancancan'
+gem 'rails_admin'
