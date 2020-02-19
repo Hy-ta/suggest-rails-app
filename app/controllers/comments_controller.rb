@@ -1,19 +1,21 @@
 class CommentsController < ApplicationController
 
   def index
-    @comments = Comment.all
+    @comments = Comment.order("id DESC")
   end
 
   def new
     @comment = Comment.new
+    @post = Post.find(params[:post_id])
+    # @user = current_user.id
   end
 
   def create
-    @post = Post.find(params[:post_id])
-    @comments = @post.comments
-    @comment = Comment.new
+    @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.post_id = @post.id
+    # @post = Post.find(params[:post_id])
+    # @comments = @post.comments
     if @comment.save
       redirect_to post_path(@post)
     else
@@ -22,9 +24,11 @@ class CommentsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @post = Post.find(params[:id])
     @comment = Comment.find(params[:id])
     @comments = @post.comments
-    @comment.user_id = User.find(params[:id])
+    # @comment.user_id = User.find(params[:id])
   end
 
   def destroy
