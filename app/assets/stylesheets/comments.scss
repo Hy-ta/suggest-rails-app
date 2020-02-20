@@ -1,4 +1,24 @@
 .form{
-    width: 100%;
+    width: 21rem;
     height: 250px;
+}
+
+.commentBg{
+    background-image: url('././bg4.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+.title{
+    background-color: burlywood;
+    opacity: 0.8;
+    border-radius: 50%;
+}
+
+.comment{
+    background-color: rosybrown;
+    opacity: 0.8;
+    border-radius: 50%;
 }

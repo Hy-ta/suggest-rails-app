@@ -1,7 +1,8 @@
 <%= stylesheet_link_tag "comments" %>
-<div class="py-4">
+
+<div class="py-4 commentBg">
 <div class="container">
-  <h2 class="text-center display-3 py-4"><span style="border-bottom:1px solid #000">Suggest !</span></h2>
+  <h2 class="text-center display-2 py-4 text-info">Suggest</h2>
   <div class="row justify-content-center">
     <%= form_with model:[@post, @comment] do |f| %>
       <% if @comment.errors.any? %>
@@ -15,13 +16,13 @@
         </div>
       <% end %>
       
-      <div class="card mt-3 col-md-12 newPost font-italic">
+      <div class="card mt-3 col-md-12 newPost font-italic commentBg">
         <h5 class="card-header text-center py-4">
-          <%= f.label :title, class:"display-4 text-info" %></br>
+          <%= f.label :title, class:"display-4 text-white title w-100" %></br>
           <%= f.text_field :title, class:"py-4" %>
         </h5>
         <div class="card-body px-lg-5 py-4 text-center">
-          <%= f.label :Comment, class:"display-4 text-danger" %></br>
+          <%= f.label :Comment, class:"display-4 text-white comment w-100" %></br>
           <%= f.text_area :content, class:"form py-4" %>
         </div>
         <div class="py-4 text-center">
