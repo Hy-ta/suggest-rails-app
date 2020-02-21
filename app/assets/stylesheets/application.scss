@@ -2,15 +2,21 @@
 @import "custom";
 
 html, body{
-    height: 100%;
+    min-height: 100%;
     font-family: "Hiragino Kaku Gothic Pron", Meiryo, sans-serif;
+    margin-bottom: 60px;
   }
-  #wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  // #wrapper {
+  //   display: flex;
+  //   flex-direction: column;
+  //   min-height: 100vh;
+  // }
   
 #footer{
-  background-color: #000; 
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  line-height: 20px; /* Vertically center the text there */
+  background-color: rgb(21, 22, 83); 
 }

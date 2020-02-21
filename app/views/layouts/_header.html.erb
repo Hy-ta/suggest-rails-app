@@ -10,26 +10,26 @@
                 <ul class="navbar-nav justify-content-end">
                     <% if user_signed_in? %>  
                     <li class="nav-item">
-                      <%= link_to "My page", current_user, class:"nav-link text-white " %>
+                      <%= link_to "My page", current_user, class:"nav-link text-success" %>
                     </li> 
                     <li class="nav-item">
-                      <%= link_to "Suggest Post", new_post_path, class:"nav-link text-white" %>
+                      <%= link_to "Get new Suggest", new_post_path, class:"nav-link text-warning" %>
                     </li>
                     <li class="nav-item">
-                    <%= link_to "All Suggest", posts_path, class:"nav-link text-white" %>
+                    <%= link_to "All Suggest", posts_path, class:"nav-link text-info" %>
                     </li>                  
                     <li>
-                    <%= link_to "Logout", destroy_user_session_path, :method => :delete, class:"nav-link text-white" %>
+                    <%= link_to "Logout", destroy_user_session_path, :method => :delete, class:"nav-link text-danger" %>
                     </li>
                     <% else %>
                     <li class="nav-item navbar-right active">
-                      <%= link_to "All Suggest", posts_path, class:"nav-link text-white" %>
+                      <%= link_to "All Suggest", posts_path, class:"nav-link text-danger" %>
                     </li>
                     <li class="nav-item">
-                      <%= link_to "Log in", login_path, class:"nav-link text-white" %>
+                      <%= link_to "Log in", login_path, class:"nav-link text-warning" %>
                     </li>
                     <li class="nav-item ">
-                      <%= link_to "Sign up", signup_path, class:"nav-link text-white" %>
+                      <%= link_to "Sign up", signup_path, class:"nav-link text-info" %>
                     </li> 
   
                   <% end %>
