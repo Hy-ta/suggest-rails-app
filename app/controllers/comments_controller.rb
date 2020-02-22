@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
       @comment.post_id = @post.id
 
     if @comment.save
-      redirect_to post_comment_path(@post, @comment)
+      redirect_to post_path(@post)
     else
       render template: 'posts/show'
     end
