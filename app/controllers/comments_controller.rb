@@ -12,11 +12,14 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    # @comment = current_user.comments.new(comment_params)
-    @comment.user_id = current_user.id
-    @comment.post_id = @post.id
-    @post = Post.find(params[:post_id])
-    # @comments = @post.comments
+    if signed_in?
+      @comment.user_id = current_user.id
+    else
+      @comment.user_id = nil
+    end
+      @post = Post.find(params[:post_id])
+      @comment.post_id = @post.id
+
     if @comment.save
       redirect_to post_comment_path(@post, @comment)
     else
@@ -26,10 +29,9 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @comments = @post.comments
-    # @comment.user_id = User.find(params[:id])
   end
 
   def destroy
