@@ -10,6 +10,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
+    # @user = User.find(params[:id])
+    @post.user_id = current_user.id
   end
   
   def create

@@ -1,6 +1,5 @@
 body{
-    background-image: url('././bg3.jpeg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background: #b92b27; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #b92b27, #1565c0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #b92b27, #1565c0);
 }
