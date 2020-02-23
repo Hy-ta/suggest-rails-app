@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_112604) do
+ActiveRecord::Schema.define(version: 2020_02_23_023008) do
 
   create_table "comments", force: :cascade do |t|
     t.string "title"
@@ -23,12 +23,31 @@ ActiveRecord::Schema.define(version: 2020_02_19_112604) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "user_id"
+    t.text "content"
+    t.integer "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.string "user_name"
     t.integer "user_id"
     t.string "img"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "user1"
+    t.integer "user2"
+    t.integer "user_id"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

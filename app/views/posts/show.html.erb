@@ -22,7 +22,7 @@
           <div class="card-body px-lg-5 pt-4 text-center">
              <%= @post.created_at.strftime('%Y/%m/%d') %>
           </div>
-          <% if user_signed_in? %> 
+          <% if owner?(@user) %>
           <div class="row px-lg-5 pt-4">
             <div class="mx-auto">
               <%= link_to "Edit", edit_post_path(@post), class:"text-success" %>

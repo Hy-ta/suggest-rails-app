@@ -21,10 +21,15 @@ Rails.application.routes.draw do
 
   get 'pages/index'
   get 'users/gallery'
+  get 'users/chat'
   resources :users
   # resources :csv_import, only: :index
     resources :posts do
       resources :comments, only: [:create, :delete, :new]
     end
+
+  resources :rooms, only: [:show, :create, :delete, :new] do
+    resources :messages, only: [:create, :delete, :new]
+  end
 
 end

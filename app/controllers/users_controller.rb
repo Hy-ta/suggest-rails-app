@@ -26,7 +26,10 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    if current_user != @user
+      redirect_to user_path(@user), notice: 'You have no permission'
+      @user = User.find(params[:id])
+    end
   end
 
   def update
@@ -39,6 +42,11 @@ class UsersController < ApplicationController
   end
 
   def gallery
+  end
+
+  def chat
+    @user = current_user
+     
   end
 
   private

@@ -73,11 +73,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 # for img
 gem 'carrierwave', '~> 2.0'
- # Bootstrap4 and jQuery
- gem 'bootstrap', '~> 4.3.1'
- gem 'jquery-rails'
+gem 'fog'
+# Bootstrap4 and jQuery
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
  # FontAwesome
-gem "font-awesome-rails"
+gem 'font-awesome-sass'
 gem 'will_paginate', '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'faker'

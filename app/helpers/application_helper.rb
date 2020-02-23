@@ -5,6 +5,12 @@ module ApplicationHelper
           base_title
         else
           base_title
-      end
+        end
     end
+
+    def owner?(user)
+      current_user == user
+    end
+
+    
 end
