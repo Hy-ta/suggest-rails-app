@@ -28,8 +28,9 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :delete, :new]
     end
 
-  resources :rooms, only: [:show, :create, :delete, :new] do
+    mount ActionCable.server => '/cable'
+    resources :rooms, only: [:show, :create, :delete, :new] 
     resources :messages, only: [:create, :delete, :new]
-  end
+
 
 end

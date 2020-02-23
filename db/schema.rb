@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_02_23_023008) do
   end
 
   create_table "rooms", force: :cascade do |t|
+    t.integer "name"
     t.integer "user1"
     t.integer "user2"
     t.integer "user_id"
