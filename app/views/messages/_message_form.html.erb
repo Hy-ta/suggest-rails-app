@@ -1,6 +1,10 @@
-<%= form_with model: message, authenticity_token: true do |f| %>
-    <%= f.label :your_message %>
-    <%= f.text_area :content, class: "form-control", data: {textarea: "message"} %>
-    <%= f.hidden_field :room_id, value: room.id %>
-    <%= f.submit "send", class: "btn btn-primary",  style: "display: none", data: {send: "message"} %>
+<div id="message">
+  <p><%= render @messages %></p>
+</div>
+
+<%= form_with url: '#', html: {id: 'new-message'} do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body, id: 'message-body' %>
+  </br>
+  <%= f.submit %>
 <% end %>

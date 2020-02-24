@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount ActionCable.server => '/cable'
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
    devise_for :users, controllers: {
       sessions: 'users/sessions',
@@ -28,9 +28,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :delete, :new]
     end
 
-    mount ActionCable.server => '/cable'
     resources :rooms, only: [:show, :create, :delete, :new] 
-    resources :messages, only: [:create, :delete, :new]
+    resources :messages, only: [:index, :create, :delete, :new]
 
 
 end

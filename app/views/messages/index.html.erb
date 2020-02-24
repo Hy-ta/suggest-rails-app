@@ -1,0 +1,16 @@
+  <div class="inbox_chat message">
+    <div class="chat_list active_chat">
+      <div class="chat_people">
+        <div class="chat_img"><%#= image_tag @user.img.url if @user.img? #%></div>
+          <div class="chat_ib">
+            <div id='messages'>
+             <strong><%= message.user.email %></strong> says:
+             <%= message.body %>
+             </br>
+             <small>at <%= l message.created_at, format: :short %></small>
+             <hr>
+            </div>
+        </div>
+      </div>                            
+    </div>
+  </div>

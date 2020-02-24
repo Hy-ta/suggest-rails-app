@@ -1,13 +1,25 @@
 class MessagesController < ApplicationController
   
+  def index
+    @messages = Message.order(created_at: :asc)
+    @user = current_user.id
+  end
+
+  def show
+    @messages = Message.all
+    @user = User.find(params[:id])
+  end
+
   def create
     message = Message.new(message_params)
     message.user = current_user
-    if message.save
-      flash[:notice] = "message was successfully sent !"
-    else
-      redirect_to rooms_path
-    end
+    # if message.save
+    #   ActionCable.server.broadcast 'messages',
+    #     message: message.content,
+    #     user: message.user.username
+    #     flash[:notice] = "Your message was successfully sent !"
+    #   head :ok 
+    # end
   end
 
   private
