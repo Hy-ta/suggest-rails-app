@@ -13,10 +13,10 @@
                       <%= link_to "My page", current_user, class:"nav-link text-success" %>
                     </li> 
                     <li class="nav-item">
-                      <%= link_to "Get new Suggest", new_post_path, class:"nav-link text-warning" %>
+                      <%= link_to "Ask", new_post_path, class:"nav-link text-warning" %>
                     </li>
                     <li class="nav-item">
-                    <%= link_to "All Suggest", posts_path, class:"nav-link text-info" %>
+                    <%= link_to "Suggest All", posts_path, class:"nav-link text-info" %>
                     </li>                  
                     <li>
                     <%= link_to "Logout", destroy_user_session_path, :method => :delete, class:"nav-link text-danger" %>
