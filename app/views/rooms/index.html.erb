@@ -1,0 +1,17 @@
+
+            <% if user_signed_in? %>
+              <h2>Chat Room 作成</h2>
+                <%= form_with model: @room do |f| %>
+                    <%= f.label :name %>
+                    <%= f.text_field :name %>
+                    <%= f.submit %>
+                <% end %>
+
+                <h2>My Chat Room</h2>
+                <% @rooms.each do |room| %>
+                    <%= link_to "#{room.name}", room_path(room) %>
+                <% end %> 
+                <div>
+                <%= link_to "create new room ?", rooms_path, method: :post, class: "btn btn-primary" %>
+                </div>
+           <% end %>

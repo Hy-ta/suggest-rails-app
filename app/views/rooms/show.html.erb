@@ -1,9 +1,12 @@
-<h1>Chat room</h1>
-
-<div id="messages">
-  <%= render @messages %>
+<div class="container">
+ <%= link_to "Back", rooms_path %>
+  <h1><%= @room.name class:"text-center py-4" %></h1>
+    <h3><%= "Your Mail Address: #{current_user&.email}" %></h3>
+      <div id="messages", data-room_id="<%= @room.id %>">
+        <%= render  @messages %>
+      </div>
+      <form> 
+        <label>Say something: </label><br>
+        <input type="text" data-behavior="room_speaker">
+      </form>
 </div>
-<form> 
-  <label>Say something: </label><br>
-  <input type="text" data-behavior="room_speaker">
-</form>

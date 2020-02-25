@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     # get 'users/:id/edit' => 'users/registrations#edit', as: :edit_other_user_registration
     # match 'users/:id', to: 'users/registrations#update', via: [:patch, :put], as: :edit_other_user_registration
   end
-  
+
   root to: 'pages#index'
 
   get 'pages/index'
@@ -28,8 +28,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :delete, :new]
     end
 
-    resources :rooms, only: [:show, :create, :delete, :new] 
-    resources :messages, only: [:index, :create, :delete, :new]
+    resources :rooms, only: [:index, :show, :create, :delete, :new] 
+    resources :messages, only: [:create, :delete, :new]
 
 
 end

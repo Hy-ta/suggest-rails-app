@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   
   def index
     @messages = Message.order(created_at: :asc)
-    @user = current_user.id
+    @users = User.all
   end
 
   def show

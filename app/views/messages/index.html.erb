@@ -4,10 +4,10 @@
         <div class="chat_img"><%#= image_tag @user.img.url if @user.img? #%></div>
           <div class="chat_ib">
             <div id='messages'>
-             <strong><%= message.user.email %></strong> says:
-             <%= message.body %>
+             
+             <%= render @messages %>
              </br>
-             <small>at <%= l message.created_at, format: :short %></small>
+             All messages: <%= User.pluck(:name)
              <hr>
             </div>
         </div>
