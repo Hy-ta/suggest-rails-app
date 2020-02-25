@@ -1,0 +1,55 @@
+/* line 1, app/assets/stylesheets/users.scss */
+body {
+  background: #12c2e9;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#12c2e9), color-stop(#c471ed), to(#f64f59));
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+}
+
+/* line 7, app/assets/stylesheets/users.scss */
+.jumbotron {
+  background: #12c2e9;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#12c2e9), color-stop(#c471ed), to(#f64f59));
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+}
+
+/* line 13, app/assets/stylesheets/users.scss */
+.gallery {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 17, app/assets/stylesheets/users.scss */
+.gallery-item {
+  list-style: none;
+  margin-top: 10px;
+}
+
+/* line 21, app/assets/stylesheets/users.scss */
+.gallery-item.is-loading {
+  opacity: 0;
+}
+
+/* line 25, app/assets/stylesheets/users.scss */
+.mainFont {
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* line 30, app/assets/stylesheets/users.scss */
+#bg-card {
+  background-image: url("https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* line 36, app/assets/stylesheets/users.scss */
+.img {
+  border-radius: 50%;
+  width: 50%;
+}

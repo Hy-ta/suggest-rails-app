@@ -1,0 +1,7 @@
+/* line 1, app/assets/stylesheets/posts.scss */
+body {
+  background-image: url("././bg-logo.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}

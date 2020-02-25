@@ -1,0 +1,27 @@
+/* line 1, app/assets/stylesheets/pages.scss */
+body {
+  background-image: url("././mainBg.jpeg");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* line 9, app/assets/stylesheets/pages.scss */
+.logo {
+  color: orange;
+  border-bottom: 1px solid #fff;
+  letter-spacing: 0.3rem;
+  padding-bottom: 10px;
+}
+
+/* line 16, app/assets/stylesheets/pages.scss */
+.box {
+  height: 680px;
+}
+
+/* line 20, app/assets/stylesheets/pages.scss */
+.desc {
+  letter-spacing: 2px;
+  line-height: 2.5rem;
+}

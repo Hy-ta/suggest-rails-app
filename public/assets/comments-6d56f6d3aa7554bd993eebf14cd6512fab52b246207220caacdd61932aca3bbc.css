@@ -1,0 +1,28 @@
+/* line 1, app/assets/stylesheets/comments.scss */
+.form {
+  width: 21rem;
+  height: 250px;
+}
+
+/* line 6, app/assets/stylesheets/comments.scss */
+body {
+  background-image: url("././bg4.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+/* line 14, app/assets/stylesheets/comments.scss */
+.title {
+  background-color: burlywood;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+/* line 20, app/assets/stylesheets/comments.scss */
+.comment {
+  background-color: rosybrown;
+  opacity: 0.8;
+  border-radius: 50%;
+}

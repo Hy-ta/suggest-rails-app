@@ -1,0 +1,21 @@
+/* line 1, app/assets/stylesheets/postNew.scss */
+body {
+  background-image: url("././newPost.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* line 7, app/assets/stylesheets/postNew.scss */
+.newPost {
+  background-image: url("././newPost.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* line 14, app/assets/stylesheets/postNew.scss */
+.form {
+  width: 100%;
+  height: 250px;
+}

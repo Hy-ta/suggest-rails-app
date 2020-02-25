@@ -1,0 +1,6 @@
+/* line 1, app/assets/stylesheets/card.scss */
+.cardSz {
+  height: 30rem;
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+}

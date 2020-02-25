@@ -1,0 +1,7 @@
+/* line 1, app/assets/stylesheets/postNew.scss */
+body {
+  background-image: url("././postNew.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
