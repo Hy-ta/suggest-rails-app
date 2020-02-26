@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
     def show
       @room = Room.find(params[:id])
       @user = User.find(params[:id])
-      @messages = @room.messages.recent.limit(5).reverse
+      @messages = Message.all
     end
 
     def create

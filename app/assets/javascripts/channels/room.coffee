@@ -1,22 +1,18 @@
-document.addEventListener 'turbolinks:load', ->
-  room_id = $('#messages').data('room_id')
-  App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: room_id },
-    connected: ->
-      # Called when the subscription is ready for use on the server
+App.room = App.cable.subscriptions.create "RoomChannel",
+  connected: ->
+    # Called when the subscription is ready for use on the server
 
-    disconnected: ->
-      # Called when the subscription has been terminated by the server
+  disconnected: ->
+    # Called when the subscription has been terminated by the server
 
-    received: (data) ->
-      if data['room_id'] is room_id
-        $('#messages').append data['messages']
-      # Called when there's incoming data on the websocket for this channel
+  received: (data) ->
+     $('#messages').append data['message']
 
-    speak: (message) ->
-      @perform 'speak', message: message
+  speak: (message) ->
+    @perform 'speak', message: message
 
-    $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
-      if event.keyCode id 13 # return = send
-        App.room.speak event.target.value
-        event.target.value = ''
-        event.preventDefault
+$(document).on 'keypress', '[data-behavior~=speak_chat_messages]', (event) ->
+  if event.keyCode is 13
+    App.chat_message.speak event.target.value
+    event.target.value = ''
+    event.preventDefault()

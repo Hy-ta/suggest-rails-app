@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     end
 
     resources :rooms, only: [:index, :show, :create, :delete, :new] 
-    resources :messages, only: [:create, :delete, :new]
+    resources :messages, only: [:index, :show, :create, :delete, :new]
 
 
 end
