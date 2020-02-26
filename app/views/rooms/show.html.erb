@@ -1,4 +1,16 @@
-<h1>Chat_room</h1>
-<div id="messages">
-  <%= render @messages %>
-</div>
+<h1><%= @room.name %>/h1>
+
+  <% @entries.each do |e| %>
+      <%= link_to e.user.name, user_path(e.user_id) %>
+  <% end %>
+
+    <form>
+      <label>Say something:</label><br>
+      <input type="text" id="chat-input" data-behavior="room_speaker">
+    </form>
+
+     <div id="messages" data-room_id="<%= room.id %>">
+       <%= render @messages %>
+     </div>
+   
+

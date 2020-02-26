@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
 
     def index
       @rooms = Room.all
+     
     end
 
     def new
@@ -10,18 +11,19 @@ class RoomsController < ApplicationController
 
     def show
       @room = Room.find(params[:id])
-      @user = User.find(params[:id])
-      @messages = Message.all
+      if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
+        @messages = @room.messages
+        @entries = @room.entries
+      else
+        redirect_to root_path
+      end
     end
 
     def create
-      @room = Room.new(room_params)
-      @user = current_user.id
-      if @room.save
-        flasf[:notice] = "New room was created !"
-        current_user.user_rooms.create(room_id: @room.id)
-        redirect_to rooms_path
-      end
+      @room = Room.new(:name => "DM")
+      @entry1 = Entry.create(:room_id => current_user.id)
+      @entry2 = Entry.create(params.require(:entry).permit(:user_id).merge(:room_id => @room.id))
+      redirect_to room_path(@room.id)
     end
 
     def top
