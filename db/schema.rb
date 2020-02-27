@@ -24,15 +24,6 @@ ActiveRecord::Schema.define(version: 2020_02_26_005228) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
-  create_table "entries", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_entries_on_room_id"
-    t.index ["user_id"], name: "index_entries_on_user_id"
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "content", default: "", null: false
     t.integer "user_id"
