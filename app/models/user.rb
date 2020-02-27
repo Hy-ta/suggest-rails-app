@@ -17,12 +17,12 @@ class User < ApplicationRecord
   validates :password_confirmation, confirmation: true
 
    def self.find_for_oauth(auth)
-     ser = User.where(uid: auth.uid, provider: auth.provider).first
+     user = User.where(uid: auth.uid, provider: auth.provider).first
        unless user
          user = User.create(
          uid:      auth.uid,
          provider: auth.provider,
-         name:  auth.info.name,
+         name:     auth.info.name,
          email:    auth.info.email,
          password: Devise.friendly_token[0, 20]
          )
