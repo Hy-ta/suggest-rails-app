@@ -9,25 +9,25 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])  
-    @currentUserEntry = Entry.where(user_id: current_user.id)
-    @userEntry = Entry.where(user_id: @user.id)
-    if @user.id == current_user.id
-    else
-      @currentUserEntry.each do |cu|
-        @userEntry.each do |u|
-          if cu.room_id == u.room_id then
-            @isRoom = true
-            @roomId = cu.room_id
-          end
-        end
-      end
+    # @currentUserEntry = Entry.where(user_id: current_user.id)
+    # @userEntry = Entry.where(user_id: @user.id)
+    #  if @user.id == current_user.id
+    #   else
+    #     @currentUserEntry.each do |cu|
+    #       @userEntry.each do |u|
+    #         if cu.room_id == u.room_id then
+    #           @isRoom = true
+    #           @roomId = cu.room_id
+    #         end
+    #     end
+    #   end
+    #  end
       
-      if @isRoom
-      else
-        @room = Room.new
-        @entry = Entry.new
-      end
-    end
+    #   if @isRoom
+    #     else
+    #       @room = Room.new
+    #       @entry = Entry.new
+    #   end
   end
 
   def new
@@ -53,6 +53,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @post = Post.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
@@ -61,11 +62,12 @@ class UsersController < ApplicationController
   end
 
   def gallery
+    @comment = Comment.where(best_comment_id: params[:best_comment_id])
+    @comments = @comment.all 
   end
 
   def chat
     @user = current_user
-     
   end
 
   private

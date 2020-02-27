@@ -15,6 +15,9 @@
           <div class="card-body px-lg-5 pt-4 text-center">
              <%= comment.created_at.strftime('%Y/%m/%d') %>
           </div>
+          <div class="card-body px-lg-5 pt-4 justify-content-right">
+             <%#= link_to "Best", @post.comment_id.update(best_id: '1') %>
+          </div>
 
             <% if user_signed_in? %> 
               <div class="row px-lg-5 pt-4">

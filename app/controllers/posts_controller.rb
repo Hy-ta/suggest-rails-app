@@ -43,6 +43,7 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+
   end
 
   def destroy
@@ -51,14 +52,20 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
     @post.destroy
-      render posts_path
+      redirect_to posts_path
     end
   end
 
-
+  def best_id
+    @post.comment = Comment.find(params[:id])
+    if @post.comment.update
+      redirect_to gallery_path
+    end
+  end
+  
   private
   def post_params
-    params.require(:post).permit(:id, :title, :content, :img, :created_at, :user_id)
+    params.require(:post).permit(:id, :title, :content, :img, :created_at, :user_id, :best_comment_id)
   end
 
 end
