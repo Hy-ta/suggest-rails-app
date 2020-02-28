@@ -61,13 +61,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def gallery
-    @comment = Comment.where(best_comment_id: params[:best_comment_id])
-    @comments = @comment.all 
-  end
-
   def chat
     @user = current_user
+  end
+
+  def gallery
+    @comment = Comment.find(params[:best_comment_id])
   end
 
   private

@@ -8,4 +8,10 @@ class Post < ApplicationRecord
 
     default_scope ->  { order(created_at: :desc) }
 
+    private
+
+    def best_id?(comment)
+        comment.where(best_comment_id: best_comment_id).exists?
+    end
+
 end

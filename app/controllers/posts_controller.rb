@@ -43,7 +43,10 @@ class PostsController < ApplicationController
     else
       render :edit
     end
-
+    @comment = @post.best_comment_id.find(params[:best_comment_id])
+    if @comment.update
+      redirect_to post_path(@post)
+    end
   end
 
   def destroy
@@ -56,12 +59,12 @@ class PostsController < ApplicationController
     end
   end
 
-  def best_id
-    @post.comment = Comment.find(params[:id])
-    if @post.comment.update
-      redirect_to gallery_path
-    end
-  end
+  # def best_id
+  #   @post.comment = Comment.find(params[:id])
+  #   if @post.comment.update
+  #     redirect_to gallery_path
+  #   end
+  # end
   
   private
   def post_params

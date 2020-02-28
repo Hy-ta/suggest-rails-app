@@ -16,7 +16,7 @@
              <%= comment.created_at.strftime('%Y/%m/%d') %>
           </div>
           <div class="card-body px-lg-5 pt-4 justify-content-right">
-             <%#= link_to "Best", @post.comment_id.update(best_id: '1') %>
+             <%= link_to "Best", post_comment_path(@comment), method: :patch %>
           </div>
 
             <% if user_signed_in? %> 

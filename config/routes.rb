@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :users
   # resources :csv_import, only: :index
     resources :posts do
-      resources :comments, only: [:create, :delete, :new]
+      resources :comments, only: [:create, :delete, :new, :update]
     end
 
     # resources :rooms, only: [:index, :show, :create, :delete, :new] 
