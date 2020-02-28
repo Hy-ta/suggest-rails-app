@@ -43,10 +43,6 @@ class PostsController < ApplicationController
     else
       render :edit
     end
-    @comment = @post.best_comment_id.find(params[:best_comment_id])
-    if @comment.update
-      redirect_to post_path(@post)
-    end
   end
 
   def destroy
@@ -68,7 +64,7 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params.require(:post).permit(:id, :title, :content, :img, :created_at, :user_id, :best_comment_id)
+    params.require(:post).permit(:id, :title, :content, :img, :created_at, :user_id)
   end
 
 end

@@ -16,13 +16,13 @@
              <%= comment.created_at.strftime('%Y/%m/%d') %>
           </div>
           <div class="card-body px-lg-5 pt-4 justify-content-right">
-             <%= link_to "Best", post_comment_path(@comment), method: :patch %>
+             <%#= link_to "Best", post_comment_path(@post.comment),  :method => :patch #%>
           </div>
 
             <% if user_signed_in? %> 
               <div class="row px-lg-5 pt-4">
                 <div class="mx-auto">
-                  <%#= link_to 'Delete', @post.comments, :method => :delete, data: {confirm: "Are you sure?"}, class:"text-danger" #%>
+                  <%#= link_to 'Delete', @post.comments, :method => :delete, data: {confirm: "Are you sure?"}, class:"text-danger" %>
                 </div>
               </div>
             <% end %>

@@ -10,8 +10,8 @@ class Post < ApplicationRecord
 
     private
 
-    def best_id?(comment)
-        comment.where(best_comment_id: best_comment_id).exists?
-    end
+    # def best_id?(comment)
+    #     comment.where(best_comment_id: best_comment_id).exists?
+    # end
 
 end

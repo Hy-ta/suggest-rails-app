@@ -41,18 +41,15 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
-  def update
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
-    if @comment.update
-      redirect_to post_path(@post)
-    end
-  end
-
   # def gallery
   #   @comment = Comment.where(best_comment_id: params[:best_comment_id])
   #   @comments = @comment.all 
   # end
+    def update
+      if @comment.update(comment_params)
+        redirect_to root_path
+      end
+    end   
 
   # def best_id_comment
   #   @user = User.find(params[:id])
@@ -61,6 +58,6 @@ class CommentsController < ApplicationController
   
   private
   def comment_params
-    params.require(:comment).permit(:title, :content, :created_at, :post_id, :user_id)
+    params.require(:comment).permit(:title, :content, :created_at, :post_id, :user_id, :best_id)
   end
 end
