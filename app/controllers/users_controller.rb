@@ -66,9 +66,7 @@ class UsersController < ApplicationController
   end
 
   def gallery
-    # @post = User.post.find(params[:post_id])
-    # @comment = Comment.find(params[:id])
-    # @comments = @post.comments
+   
     # @comment = Post.comment.find(params[:best_comment_id])
   end
 

@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_02_26_005228) do
     t.string "user_name"
     t.integer "user_id"
     t.string "img"
+    t.integer "best_comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

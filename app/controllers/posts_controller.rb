@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
-    @comment = Comment.new
+    # @post = Comment.post_id.find(params[:post_id])
     # @user = User.find(params[:id])
     @user = User.find(@post.user_id)
   end
@@ -55,16 +55,20 @@ class PostsController < ApplicationController
     end
   end
 
-  # def best_id
-  #   @post.comment = Comment.find(params[:id])
-  #   if @post.comment.update
-  #     redirect_to gallery_path
-  #   end
-  # end
+  def best_update
+    params[:best_comment_id]
+    @comment = Comment.find(params[:id])
+    # @post = @comment.post
+    @best_comment_id = Post.where(best_comment_id: params[:id])
+   
+    if @post.best_comment_id.update
+      redirect_to root_path
+    end
+  end
   
   private
   def post_params
-    params.require(:post).permit(:id, :title, :content, :img, :created_at, :user_id)
+    params.require(:post).permit(:id, :title, :content, :img, :created_at, :user_id, :best_comment_id)
   end
 
 end
