@@ -9,9 +9,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
-    # @post = Comment.post_id.find(params[:post_id])
-    # @user = User.find(params[:id])
-    @user = User.find(@post.user_id)
+    @user = @post.user_id
   end
   
   def create
@@ -56,17 +54,17 @@ class PostsController < ApplicationController
   end
 
   def best_update
-    params[:best_comment_id]
-    @comment = Comment.find(params[:id])
-    # @post = @comment.post
-    @best_comment_id = Post.where(best_comment_id: params[:id])
-   
-    if @post.best_comment_id.update
-      redirect_to root_path
+    comment = Comment.find(params[:best_comment_id])
+    post = comment.post
+    if post.update(best_comment_id: params[:best_comment_id])
+      redirect_to post_path(post), flash: {success: 'Bestが決まりました'}
+    else
+      redirect_to post_path(post), flash: {notice: 'もう１度動作を行ってください'}
     end
   end
   
   private
+  
   def post_params
     params.require(:post).permit(:id, :title, :content, :img, :created_at, :user_id, :best_comment_id)
   end

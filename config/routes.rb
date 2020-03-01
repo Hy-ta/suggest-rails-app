@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   # resources :csv_import, only: :index
     resources :posts do
       member do
-        post :best_update
+        put :best_update
       end
       resources :comments, only: [:create, :delete, :new, :update]
     end

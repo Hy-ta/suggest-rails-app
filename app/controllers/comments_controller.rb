@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
       @comment.post_id = @post.id
 
     if @comment.save
-      redirect_to post_path(@post)
+      redirect_to post_path(@post, @comment), flash: {success: 'Comment successfully sent !'}
     else
       render template: 'posts/show'
     end
@@ -41,22 +41,9 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
-  # def gallery
-  #   @comment = Comment.where(best_comment_id: params[:best_comment_id])
-  #   @comments = @comment.all 
-  # end
-    def update
-      if @comment.update(comment_params)
-        redirect_to root_path
-      end
-    end   
-
-  # def best_id_comment
-  #   @user = User.find(params[:id])
-  #   @comment.best_id = Comment.find(params[:best_id])
-  # end
-  
   private
+
+  
   def comment_params
     params.require(:comment).permit(:title, :content, :created_at, :post_id, :user_id, :best_id)
   end

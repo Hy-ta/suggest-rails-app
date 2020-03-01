@@ -4,7 +4,7 @@
 <div class="py-4" id="gbg">
   <div class="container">
     <div class="row justify-content-center">
-       <% @comments.each do |comment| %>
+       <% @post.best_comment_id.each do |comment| %>
         <div class="card mt-3 col-9 col-md-9 cardSz">
           <h5 class="card-header text-center py-4">
             <strong><%= comment.title %></strong>
