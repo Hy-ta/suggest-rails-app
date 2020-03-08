@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validate  :validate_name_not_including_comma
   validates :char_id, length: { maximum: 12 }
   validates :email,   format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-  validates :password, presence: true, length: {maximum: 12}
+  validates :password, presence: true, length: {maximum: 22}
   validates :password_confirmation, confirmation: true
 
    def self.find_for_oauth(auth)
