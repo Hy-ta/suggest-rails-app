@@ -11,6 +11,23 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @user = @post.user_id
   end
+
+  def create
+    @comment = Comment.new(comment_params)
+    if signed_in?
+      @comment.user_id = current_user.id
+    else
+      @comment.user_id = nil
+    end
+      @post = Post.find(params[:post_id])
+      @comment.post_id = @post.id
+
+    if @comment.save
+      redirect_to post_path(@post, @comment), flash: {success: 'Comment successfully sent !'}
+    else
+      render template: 'posts/show'
+    end
+  end
   
   def create
     @post = Post.new(post_params)

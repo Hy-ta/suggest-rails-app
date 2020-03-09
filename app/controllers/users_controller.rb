@@ -44,14 +44,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def chat
-    @user = current_user
-  end
-
   def gallery
-   user = User.find(params[:id])  
-   comment = Comment.find(params[:best_comment_id])
-   post = comment.post
+   post = 
+   comments = @user.comments
+   comment = Comment.find(params[:comment_id])
   end
 
   private
