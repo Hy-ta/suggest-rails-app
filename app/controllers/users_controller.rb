@@ -9,8 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])  
-    comments = @user.comments
-    post = Post.find(params[:id])
+    # comments = @user.comments
+    # post = Post.find(params[:id])
   end
 
   def new
