@@ -11,6 +11,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])  
     # comments = @user.comments
     # post = Post.find(params[:id])
+    @posts = @user.posts
+    @comments = @user.comments
   end
 
   def new
@@ -46,7 +48,7 @@ class UsersController < ApplicationController
 
   def gallery
     user = current_user.id
-    post = User.post.find(params[:id])
+    comment = Comment.find(params[:best_comment_id])
   end
 
   private
