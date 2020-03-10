@@ -45,9 +45,8 @@ class UsersController < ApplicationController
   end
 
   def gallery
-   post = 
-   comments = @user.comments
-   comment = Comment.find(params[:comment_id])
+    user = current_user.id
+    post = User.post.find(params[:id])
   end
 
   private
