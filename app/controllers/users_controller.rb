@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])  
     @post = @user.posts
-    @comments = @user.comments.find_by(best_comment_id: params[:best_comment_id])
+    @comments = @user.comments
     # @posts = @user.posts
     # @comments = @user.comments
   end
@@ -47,14 +47,13 @@ class UsersController < ApplicationController
   end
 
   def gallery
-    @user = current_user
-    # @comments = @user.comments.find_by(best_comment_id: params[:best_comment_id])
+     @comments = Comment.where(best_comment_id: params[:best_comment_id])
     if signed_in?
-      @comments = @user.comments.find_by(best_comment_id: params[:best_comment_id])
+      @comment.user_id = current_user.id
     else
-      @comments= nil
+      @comment.user_id = nil
     end
-    # comment = Comment.find_by(params[:user_id])
+    comment = Comment.find_by(params[:user_id])
     # @comments = @user.posts.where(best_comment_id: params[:best_comment_id])
      
 
