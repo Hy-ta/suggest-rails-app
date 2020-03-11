@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_112604) do
     t.integer "user_id"
     t.integer "post_id"
     t.string "user_img"
-    t.integer "best_id"
+    t.integer "best_comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"

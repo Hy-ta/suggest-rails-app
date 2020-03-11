@@ -18,10 +18,7 @@
   <div class="container">
       <div class="row justify-content-center">
         <div class="my-2 text-white col-3 col-md-3">
-          <%= link_to "Chat", users_chat_path, class:"btn btn-primary w-100" %>
-        </div>
-        <div class="my-2 text-white col-3 col-md-3">
-          <%= link_to "Gallery",  users_gallery_path(@user, @posts, @comments), class:"btn btn-danger w-100" %>
+          <%= link_to "Gallery",  users_gallery_path(@comments), class:"btn btn-danger w-100" %>
         </div>
         <div class="my-2 col-md-3 col-3">
             <%= link_to "Ask", new_post_path, class: "btn btn-warning text-white w-100" %>

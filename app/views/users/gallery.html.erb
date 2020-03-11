@@ -4,7 +4,7 @@
 <div class="py-4" id="gbg">
   <div class="container">
     <div class="row justify-content-center">
-       <% @post.best_comment_id.each do |comment| %>
+       <% @comments.each do |comment| %>
         <div class="card mt-3 col-9 col-md-9 cardSz">
           <h5 class="card-header text-center py-4">
             <strong><%= comment.title %></strong>
@@ -34,7 +34,7 @@
             </button>
     </div>
         <div class="modal-body">
-        <p><%= @comment.content %></p>
+        <p><%= comment.content %></p>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dissmiss="modal">Close</button>
         </div>

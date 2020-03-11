@@ -79,7 +79,7 @@ class PostsController < ApplicationController
       redirect_to post_path(post), flash: {notice: 'もう１度動作を行ってください'}
     end
   end
-  
+
   private
   
   def post_params
