@@ -47,13 +47,9 @@ class UsersController < ApplicationController
   end
 
   def gallery
-     @comments = Comment.where(best_comment_id: params[:best_comment_id])
-    if signed_in?
-      @comment.user_id = current_user.id
-    else
-      @comment.user_id = nil
-    end
-    comment = Comment.find_by(params[:user_id])
+    @user = current_user
+    @comments = @user.comments.find_by(best_comment_id: params[:best_comment_id])
+    #  @comments = Comment.where(best_comment_id: params[:best_comment_id])
     # @comments = @user.posts.where(best_comment_id: params[:best_comment_id])
      
 
