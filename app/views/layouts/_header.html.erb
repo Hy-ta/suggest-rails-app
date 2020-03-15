@@ -16,14 +16,14 @@
                       <%= link_to "Ask", new_post_path, class:"nav-link text-warning" %>
                     </li>
                     <li class="nav-item">
-                    <%= link_to "Suggest All", posts_path, class:"nav-link text-info" %>
+                    <%= link_to "Posts All", posts_path, class:"nav-link text-info" %>
                     </li>                  
                     <li>
                     <%= link_to "Logout", destroy_user_session_path, :method => :delete, class:"nav-link text-danger" %>
                     </li>
                     <% else %>
                     <li class="nav-item navbar-right active">
-                      <%= link_to "All Suggest", posts_path, class:"nav-link text-danger" %>
+                      <%= link_to "Posts All", posts_path, class:"nav-link text-danger" %>
                     </li>
                     <li class="nav-item">
                       <%= link_to "Log in", login_path, class:"nav-link text-warning" %>

@@ -2,8 +2,9 @@
 // *= require_self
 // */
 @import "bootstrap";
-// @import "font-awesome";
 @import "custom";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 html, body{
     min-height: 100%;
@@ -23,4 +24,8 @@ html, body{
   height: auto;
   line-height: 20px; /* Vertically center the text there */
   background-color: rgb(21, 22, 83); 
+}
+
+ i {
+  color: goldenrod;
 }

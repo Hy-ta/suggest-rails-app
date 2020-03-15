@@ -47,12 +47,16 @@ class UsersController < ApplicationController
   end
 
   def gallery
-    @user = current_user
-    @comments = @user.comments.find_by(best_comment_id: params[:best_comment_id])
-    #  @comments = Comment.where(best_comment_id: params[:best_comment_id])
-    # @comments = @user.posts.where(best_comment_id: params[:best_comment_id])
-     
-
+    comments = current_user.comments
+    # posts = []
+    # comments.each do |comment|
+    #   posts << Post.where(best_comment_id: comment.id)
+    # end
+    posts = Post.where(best_comment_id: comments)
+    @comments = []
+    posts.each do |post|
+      @comments << Comment.find(post.best_comment_id)
+    end
   end
 
   private
