@@ -14,7 +14,7 @@
   <div class="field py-4">
       <span style="border-bottom:1px solid #000"><%= f.label :img %></br>
       <%= f.file_field :img %>
-    </div>
+  </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
