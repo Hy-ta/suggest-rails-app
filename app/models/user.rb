@@ -9,8 +9,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
+  scope :active_users, -> {where(name:true)}
+  scope :inactive_users, -> {where(uid:false)}
+  
   validates :name,    presence: true
-  validate  :validate_name_not_including_comma
+  validate :validate_name_not_including_comma
   validates :char_id, length: { maximum: 12 }
   validates :email,   format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :password, presence: true, length: {maximum: 22}

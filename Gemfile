@@ -41,6 +41,7 @@ group :development, :test do
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'awesome_print'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -89,3 +90,4 @@ gem 'dotenv-rails'
 # admin
 gem 'cancancan'
 gem 'rails_admin'
+gem 'simplecov', require: false, group: :test
